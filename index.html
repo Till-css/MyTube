@@ -3,60 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MyTube</title>
+  <title>Login | MyTube</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-left">
-      <button class="logo-btn" onclick="location.reload()">🎬 MyTube</button>
-      <button class="nav-btn" data-view="home">Home</button>
-      <button class="nav-btn" data-view="discover">Entdecken</button>
-      <button class="nav-btn" data-view="uploads">Uploads</button>
-    </div>
-    <div class="nav-right">
-      <div class="settings-dropdown">
-        <button class="nav-btn" id="settingsBtn">⚙️</button>
-        <div class="dropdown-content" id="settingsMenu">
-          <label><input type="checkbox" id="darkModeToggle" /> Dark Mode</label>
-          <label>
-            <select id="videoSizeSelect">
-              <option value="default">Standardgröße</option>
-              <option value="compact">Kompakt</option>
-            </select>
-          </label>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <aside class="sidebar">
-    <button class="sidebar-btn" data-view="collection">📁 Meine Sammlung</button>
-    <button class="sidebar-btn" data-view="watchLater">⏱ Später ansehen</button>
-    <button class="sidebar-btn" data-view="favorites">⭐ Favoriten</button>
-    <button class="sidebar-btn" data-view="upload">📤 Hochladen</button>
-  </aside>
-
-  <main id="main-content">
-    <section class="upload-form hidden" id="uploadForm">
-      <h2>Video hochladen</h2>
-      <form id="videoUploadForm">
-        <input type="text" id="videoTitle" placeholder="Titel" required />
-        <textarea id="videoDescription" placeholder="Beschreibung" required></textarea>
-        <input type="file" id="thumbnailInput" accept="image/*" />
-        <div id="thumbnailPreview"></div>
-        <div id="dropzone">
-          Video hierher ziehen oder klicken zum Hochladen
-          <input type="file" id="videoFile" accept="video/*" />
-        </div>
-        <button type="submit">Hochladen</button>
-      </form>
-    </section>
-
-    <section class="video-grid" id="videoGrid"></section>
-  </main>
-
+  <div class="login-container">
+    <h2>Login</h2>
+    <form onsubmit="return checkLogin(event)">
+      <input type="text" id="username" placeholder="Benutzername" required />
+      <input type="password" id="password" placeholder="Passwort" required />
+      <button type="submit">Anmelden</button>
+      <p id="error-message"></p>
+    </form>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
-
